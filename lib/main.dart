@@ -19,30 +19,28 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.white,
           elevation: 0,
-          leading: Row(
-            children: [
-              Builder(
-                builder: (context) => IconButton(
-                  onPressed: () {
-                    Scaffold.of(context).openDrawer();
-                  },
-                  icon: const Icon(Icons.menu),
+          automaticallyImplyLeading: false,
+          title: Builder(
+            builder: (context) => GestureDetector(
+              onTap: () {
+                Scaffold.of(context).openDrawer();
+              },
+              child: Container(
+                alignment: Alignment.centerLeft,
+                child: Image.asset(
+                  'assets/images/instagram-logo.png',
+                  height: 50,
                 ),
               ),
-              IconButton(
-                onPressed: () {},
-                icon: const Icon(Icons.camera_alt_outlined),
-              ),
-            ],
+            ),
           ),
           actions: [
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.favorite_border_outlined),
+            ),
             IconButton(onPressed: () {}, icon: const Icon(Icons.send_outlined)),
           ],
-          title: Image.asset(
-            'assets/images/instagram-logo.png',
-            color: Colors.black,
-            height: 50,
-          ),
           centerTitle: true,
         ),
         drawer: Drawer(
@@ -73,6 +71,7 @@ class MyApp extends StatelessWidget {
           child: Column(children: [StoryWidget(), PostWidget()]),
         ),
         bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: Colors.grey.shade200,
           selectedItemColor: Colors.black,
           unselectedItemColor: Colors.grey.shade700,
           type: BottomNavigationBarType.fixed,
@@ -101,6 +100,13 @@ class MyApp extends StatelessWidget {
             ),
           ],
         ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          backgroundColor: Colors.blue,
+          child: const Icon(Icons.add, color: Colors.white),
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+        floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
       ),
     );
   }
