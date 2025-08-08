@@ -19,6 +19,22 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.white,
           elevation: 0,
+          leading: Row(
+            children: [
+              Builder(
+                builder: (context) => IconButton(
+                  onPressed: () {
+                    Scaffold.of(context).openDrawer();
+                  },
+                  icon: const Icon(Icons.menu),
+                ),
+              ),
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.camera_alt_outlined),
+              ),
+            ],
+          ),
           actions: [
             IconButton(onPressed: () {}, icon: const Icon(Icons.send_outlined)),
           ],
@@ -34,15 +50,10 @@ class MyApp extends StatelessWidget {
             padding: EdgeInsets.zero,
             children: [
               DrawerHeader(
-                decoration: BoxDecoration(
-                  color: Colors.blue,
-                ),
+                decoration: BoxDecoration(color: Colors.blue),
                 child: Text(
                   'Instagram',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 24,
-                  ),
+                  style: TextStyle(color: Colors.white, fontSize: 24),
                 ),
               ),
               ListTile(
@@ -59,10 +70,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
         body: SingleChildScrollView(
-          child: Column(children: [
-            StoryWidget(),
-            PostWidget(),
-          ],)
+          child: Column(children: [StoryWidget(), PostWidget()]),
         ),
         bottomNavigationBar: BottomNavigationBar(
           selectedItemColor: Colors.black,
@@ -75,7 +83,7 @@ class MyApp extends StatelessWidget {
               icon: Icon(Icons.home_outlined),
               label: 'Home',
             ),
-             BottomNavigationBarItem(
+            BottomNavigationBarItem(
               icon: Icon(Icons.search_outlined),
               label: 'Search',
             ),
