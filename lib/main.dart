@@ -19,10 +19,6 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.white,
           elevation: 0,
-          leading: IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.camera_alt_outlined),
-          ),
           actions: [
             IconButton(onPressed: () {}, icon: const Icon(Icons.send_outlined)),
           ],
@@ -32,6 +28,35 @@ class MyApp extends StatelessWidget {
             height: 50,
           ),
           centerTitle: true,
+        ),
+        drawer: Drawer(
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: [
+              DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                ),
+                child: Text(
+                  'Instagram',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 24,
+                  ),
+                ),
+              ),
+              ListTile(
+                leading: Icon(Icons.home),
+                title: Text('Home'),
+                onTap: () {},
+              ),
+              ListTile(
+                leading: Icon(Icons.settings),
+                title: Text('Settings'),
+                onTap: () {},
+              ),
+            ],
+          ),
         ),
         body: SingleChildScrollView(
           child: Column(children: [
