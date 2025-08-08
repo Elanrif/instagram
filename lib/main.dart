@@ -51,25 +51,23 @@ final List storyItems = [
     'lastName': 'Lumb',
     'photo': 'assets/images/photo/photo-5.webp',
   },
-  // Tu peux dupliquer ou ajouter plus d'éléments si besoin
 ];
 
+final List socialMedias = [
+  {'name': 'Partager via', 'icon': Icon(Icons.share)},
+  {'name': 'copier le lien', 'icon': Icon(Icons.copy)},
+  {'name': 'WhatsApp', 'icon': 'assets/images/social-media/whatsApp.png'},
+  {'name': 'Facebook', 'icon': 'assets/images/social-media/facebook.png'},
+  {'name': 'Gmail', 'icon': 'assets/images/social-media/g-mail.png'},
+  {'name': 'Messenger', 'icon': 'assets/images/social-media/messenger.jpeg'},
+  {'name': 'X', 'icon': 'assets/images/social-media/x.png'},
+];
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-  static List socialMedias = [
-    {'name': 'Partager via', 'icon': Icon(Icons.share)},
-    {'name': 'copier le lien', 'icon': Icon(Icons.copy)},
-    {'name': 'WhatsApp', 'icon': 'assets/images/social-media/whatsApp.png'},
-    {'name': 'Facebook', 'icon': 'assets/images/social-media/facebook.png'},
-    {'name': 'Gmail', 'icon': 'assets/images/social-media/g-mail.png'},
-    {'name': 'Messenger', 'icon': 'assets/images/social-media/messenger.jpeg'},
-    {'name': 'X', 'icon': 'assets/images/social-media/x.png'},
-  ];
 
   @override
   Widget build(BuildContext context) {
